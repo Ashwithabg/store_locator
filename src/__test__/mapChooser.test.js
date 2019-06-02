@@ -1,4 +1,4 @@
-import mapChooser from '../MapChooser';
+import mapChooser from '../mapChooser';
 
 describe("mapChooser", function () {
     it("returns an location image file name based on locationName given to it", function () {
