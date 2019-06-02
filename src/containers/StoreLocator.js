@@ -10,7 +10,9 @@ class StoreLocator extends React.Component {
         return (
             <div>
                 <Header/>
-                <Button/> <Button/>
+                <div>
+                    <Button/> <Button/>
+                </div>
                 <Map/>
             </div>
         )

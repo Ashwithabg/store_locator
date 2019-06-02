@@ -1,11 +1,13 @@
 import React from 'react';
-import '../App.css';
+import './Map.css';
 
 
 class Map extends React.Component {
     render() {
         return (
-            <img src="default.jpg"/>
+            <div className="MapBox">
+                <img src="images/none.png" alt="defult map"/>
+            </div>
         )
     }
 }
