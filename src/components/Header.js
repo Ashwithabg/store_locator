@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from '../logo.svg';
-import '../App.css';
 
 function Header() {
     return (
-        <header className="Header">
-            Header
-        </header>
+        <div className="Header">
+            <img src="images/wired-brain-coffee-logo.png" alt="wired brain logo"/>
+        </div>
     );
 }
 
