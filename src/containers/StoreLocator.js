@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from '../components/Header';
 import Button from "../components/Button";
 import Map from "../components/Map";
+import Header from '../components/Header';
+import mapChooser from "../mapChooser";
 import '../App.css';
 
 class StoreLocator extends React.Component {
@@ -15,7 +16,7 @@ class StoreLocator extends React.Component {
             'address': '123 Astoria Dr'
         },
         {
-            'location': 'All location',
+            'location': '',
             'address': ''
         }];
 
@@ -26,11 +27,16 @@ class StoreLocator extends React.Component {
             currentMap: 'none.png'
         };
         this.shops = this.stores;
+        this.chooseMap = this.chooseMap.bind(this);
+    }
+
+    chooseMap(event){
+        this.setState({currentMap: mapChooser(event.target.value)});
     }
 
     render() {
         let storeButtons = this.shops.map((shop, id) => {
-            return (<Button key={id} location={shop.location}/>)
+            return (<Button handleClick={this.chooseMap} key={id} location={shop.location}/>)
         });
 
         return (

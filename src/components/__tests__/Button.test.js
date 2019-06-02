@@ -15,6 +15,15 @@ describe('Button', function () {
         expect(button.length).toBe(1)
     });
 
+    it('calls function that is passed to it when clicked', function () {
+        const mockCallback = jest.fn();
+        const mountedButtonWIthCallback = shallow(<Button handleClick={mockCallback}/>);
+
+        mountedButtonWIthCallback.find('button').simulate('click');
+
+        expect(mockCallback.mock.calls.length).toEqual(1)
+    });
+
     describe("when location is passed", function () {
         let mountedButton;
         let props;

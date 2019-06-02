@@ -5,7 +5,7 @@ import StoreLocator from '../StoreLocator';
 describe('storeLocator', function () {
     let mountedStoreLocator;
 
-    beforeEach(() =>{
+    beforeEach(() => {
         mountedStoreLocator = shallow(<StoreLocator/>)
     });
 
@@ -26,6 +26,21 @@ describe('storeLocator', function () {
 
         expect(mountedMap.length).toBe(1)
     });
+
+    describe('choose map', function () {
+        it('should update current map state', function () {
+            let locationName = 'testland';
+            let locationImageName = locationName + '.png';
+            let mountedStoreLocator = shallow(<StoreLocator/>);
+            let mockEvent = {target: {value: locationName}};
+
+            mountedStoreLocator.instance().chooseMap(mockEvent);
+
+            expect(mountedStoreLocator.instance().state.currentMap).toBe(locationImageName)
+
+        });
+    });
+
 });
 
 
