@@ -4,7 +4,7 @@ import './Button.css'
 class Button extends React.Component {
     render() {
         return (
-            <button className="location-button">Store</button>
+            <button className="location_button">{this.props.location ? this.props.location : 'All Locations'}</button>
         )
     }
 }
