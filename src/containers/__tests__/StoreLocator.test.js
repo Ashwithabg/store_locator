@@ -1,6 +1,6 @@
 import React from 'React';
-import StoreLocator from '../StoreLocator';
 import {shallow} from 'enzyme';
+import StoreLocator from '../StoreLocator';
 
 describe('storeLocator', function () {
     let mountedStoreLocator;
@@ -18,7 +18,7 @@ describe('storeLocator', function () {
     it('renders two Buttons', function () {
         const mountedButton = mountedStoreLocator.find('Button');
 
-        expect(mountedButton.length).toBe(2)
+        expect(mountedButton.length).toBe(3)
     });
 
     it('renders Map', function () {

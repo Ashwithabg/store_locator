@@ -1,6 +1,6 @@
 import React from 'React';
-import Button from '../Button';
 import {shallow} from 'enzyme';
+import Button from '../Button';
 
 describe('Button', function () {
     let mountedButton;
