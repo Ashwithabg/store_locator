@@ -1,9 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {shallow} from 'enzyme';
 import App from '../App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('app', function () {
+    it('renders without crashing', function () {
+        let mountedApp = shallow(<App/>)
+    });
+
+    it('renders store locator', function () {
+        let mountedApp = shallow(<App/>);
+        const locators = mountedApp.find('StoreLocator');
+
+        expect(locators.length).toBe(1)
+    });
 });
+
+
